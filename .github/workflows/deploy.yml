@@ -19,6 +19,8 @@ jobs:
           node-version: '18'
       - name: Install
         run: npm ci
+      - name: Ingest spreadsheets
+        run: npm run ingest
       - name: Build
         run: npm run build
       - name: Deploy

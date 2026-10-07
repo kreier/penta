@@ -1,11 +1,15 @@
 {
   "name": "penta-ui",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ingest": "node scripts/ingest.js",
+    "sample-data": "node scripts/generate_sample_data.js",
+    "analyze": "node scripts/bench_analyzer.js"
   },
   "dependencies": {
     "react": "^18.2.0",

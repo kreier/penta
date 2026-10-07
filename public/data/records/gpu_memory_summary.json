@@ -1,0 +1,137 @@
+{
+  "filename": "gpu_memory_summary.xlsx",
+  "parsedAt": "2026-10-07T05:00:07.009Z",
+  "fileSize": 20314,
+  "sheets": {
+    "GPU Hardware Inventory": {
+      "rowCount": 5,
+      "headers": [
+        "id",
+        "name",
+        "role",
+        "architecture",
+        "vram_type",
+        "total_memory_mb",
+        "usable_vram_mb",
+        "idle_power_w",
+        "driver"
+      ],
+      "rows": [
+        {
+          "id": 0,
+          "name": "Intel HD Graphics 530",
+          "role": "Display & Host Offload iGPU",
+          "architecture": "Skylake GT2",
+          "vram_type": "Shared DDR4 System RAM",
+          "total_memory_mb": 16384,
+          "usable_vram_mb": 4096,
+          "idle_power_w": 4.2,
+          "driver": "i915"
+        },
+        {
+          "id": 1,
+          "name": "NVIDIA GeForce GTX 1070",
+          "role": "Primary Discrete / Display / Head Layer",
+          "architecture": "Pascal GP104",
+          "vram_type": "GDDR5",
+          "total_memory_mb": 8192,
+          "usable_vram_mb": 7980,
+          "idle_power_w": 12.8,
+          "driver": "NVIDIA 550.120"
+        },
+        {
+          "id": 2,
+          "name": "NVIDIA P104-100 #1",
+          "role": "Compute Node / Mining Pascal Edition",
+          "architecture": "Pascal GP104-100",
+          "vram_type": "GDDR5X",
+          "total_memory_mb": 8192,
+          "usable_vram_mb": 8110,
+          "idle_power_w": 14.1,
+          "driver": "NVIDIA 550.120"
+        },
+        {
+          "id": 3,
+          "name": "NVIDIA P104-100 #2",
+          "role": "Compute Node / Mining Pascal Edition",
+          "architecture": "Pascal GP104-100",
+          "vram_type": "GDDR5X",
+          "total_memory_mb": 8192,
+          "usable_vram_mb": 8110,
+          "idle_power_w": 13.9,
+          "driver": "NVIDIA 550.120"
+        },
+        {
+          "id": 4,
+          "name": "NVIDIA P106-100",
+          "role": "Compute Node / Mining Pascal Edition",
+          "architecture": "Pascal GP106-100",
+          "vram_type": "GDDR5",
+          "total_memory_mb": 6144,
+          "usable_vram_mb": 6080,
+          "idle_power_w": 10.5,
+          "driver": "NVIDIA 550.120"
+        }
+      ]
+    },
+    "VRAM Allocation Profiles": {
+      "rowCount": 5,
+      "headers": [
+        "workload",
+        "total_allocated_mb",
+        "gtx_1070_mb",
+        "p104_1_mb",
+        "p104_2_mb",
+        "p106_mb",
+        "status"
+      ],
+      "rows": [
+        {
+          "workload": "Idle (Docker Ollama Daemon)",
+          "total_allocated_mb": 320,
+          "gtx_1070_mb": 140,
+          "p104_1_mb": 60,
+          "p104_2_mb": 60,
+          "p106_mb": 60,
+          "status": "OPTIMAL"
+        },
+        {
+          "workload": "Llama 3 8B Q4_K_M (Full Offload)",
+          "total_allocated_mb": 5920,
+          "gtx_1070_mb": 4120,
+          "p104_1_mb": 1800,
+          "p104_2_mb": 0,
+          "p106_mb": 0,
+          "status": "OPTIMAL"
+        },
+        {
+          "workload": "Qwen 2.5 14B Q4_K_M (Full Offload)",
+          "total_allocated_mb": 10450,
+          "gtx_1070_mb": 3900,
+          "p104_1_mb": 3300,
+          "p104_2_mb": 3250,
+          "p106_mb": 0,
+          "status": "OPTIMAL"
+        },
+        {
+          "workload": "DeepSeek 16B Q4_K_M (Full Offload)",
+          "total_allocated_mb": 13200,
+          "gtx_1070_mb": 3800,
+          "p104_1_mb": 3600,
+          "p104_2_mb": 3600,
+          "p106_mb": 2200,
+          "status": "OPTIMAL"
+        },
+        {
+          "workload": "Llama 3 70B Q4_0 (Max Offload Split)",
+          "total_allocated_mb": 29800,
+          "gtx_1070_mb": 7600,
+          "p104_1_mb": 7800,
+          "p104_2_mb": 7800,
+          "p106_mb": 5800,
+          "status": "MAX_CAPACITY"
+        }
+      ]
+    }
+  }
+}
