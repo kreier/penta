@@ -146,7 +146,7 @@ export default function App() {
         <div className="hardware-pill">
           <span className="dot online"></span>
           <span className="hw-info">
-            <strong>Penta Host:</strong> i3-6100 iGPU • GTX 1070 • 2× P104-100 • P106-100 (30GB VRAM)
+            <strong>Penta Host:</strong> i3-6100 iGPU (Display) • 4× Dedicated Pascal GPUs (30GB AI VRAM)
           </span>
         </div>
       </header>
@@ -380,7 +380,7 @@ export default function App() {
 
       <footer className="site-footer">
         <div>
-          <strong>Penta GPU Rig</strong> — Intel i3-6100 (HD 530) + GTX 1070 8GB + 2× P104-100 8GB + P106-100 6GB
+          <strong>Penta GPU Rig</strong> — Intel i3-6100 HD 530 (Display) + 4× Dedicated Pascal GPUs: GTX 1070 8GB + 2× P104-100 8GB + P106-100 6GB (30GB AI VRAM)
         </div>
         <div>
           Automated by <code>scripts/ingest.js</code> (excel-ingest pipeline)

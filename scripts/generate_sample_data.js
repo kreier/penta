@@ -146,7 +146,7 @@ const gpuInventory = [
   {
     id: 0,
     name: 'Intel HD Graphics 530',
-    role: 'Display & Host Offload iGPU',
+    role: 'Host Physical Display & Desktop GUI iGPU',
     architecture: 'Skylake GT2',
     vram_type: 'Shared DDR4 System RAM',
     total_memory_mb: 16384,
@@ -157,11 +157,11 @@ const gpuInventory = [
   {
     id: 1,
     name: 'NVIDIA GeForce GTX 1070',
-    role: 'Primary Discrete / Display / Head Layer',
+    role: 'Dedicated AI Compute Node (Pascal GP104)',
     architecture: 'Pascal GP104',
     vram_type: 'GDDR5',
     total_memory_mb: 8192,
-    usable_vram_mb: 7980,
+    usable_vram_mb: 8110,
     idle_power_w: 12.8,
     driver: 'NVIDIA 550.120'
   },
@@ -203,8 +203,8 @@ const gpuInventory = [
 const allocationSummary = [
   {
     workload: 'Idle (Docker Ollama Daemon)',
-    total_allocated_mb: 320,
-    gtx_1070_mb: 140,
+    total_allocated_mb: 240,
+    gtx_1070_mb: 60,
     p104_1_mb: 60,
     p104_2_mb: 60,
     p106_mb: 60,

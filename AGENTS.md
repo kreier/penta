@@ -19,5 +19,5 @@ This project uses lightweight agents (scripts and automation services backed by 
 
 ## Planned Future Agents
 
-- **`experiment-recommender`:** Analyzes GPU VRAM splits across the 5 cards (GTX 1070 + 2× P104-100 + P106-100 + iGPU) and recommends optimal Ollama `--num-gpu` and layer split boundaries.
+- **`experiment-recommender`:** Analyzes GPU VRAM splits across all 4 dedicated Pascal cards (GTX 1070 + 2× P104-100 + P106-100 = 30 GB VRAM, with display handled by i3-6100 iGPU) and recommends optimal Ollama `--num-gpu` and layer split boundaries.
 - **`nl-query-agent`:** Natural language search agent allowing queries like *"Which model achieves over 30 tokens/sec without spilling to CPU RAM?"*

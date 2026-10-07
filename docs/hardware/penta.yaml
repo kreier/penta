@@ -1,16 +1,53 @@
 name: penta
 purpose: AI inference
 cpu: Intel Core i3-6100
+display_device: Intel HD Graphics 530 (i3-6100 iGPU)
+display_connection: Motherboard integrated video output
 gpu_count: 5
+discrete_gpus_dedicated_to_ai: 4
 discrete_vram_gb: 30
 gpus:
-  - model: GTX 1070
+  - id: 0
+    model: Intel HD Graphics 530
+    type: integrated
+    role: display
+    dedicated_ai: false
+    display_connected: true
+    vram: Shared DDR4 Host RAM
+    description: Drives physical monitor & host OS GUI, keeping discrete GPUs 100% free of display framebuffer overhead.
+  - id: 1
+    model: GTX 1070
     vram_gb: 8
-  - model: P104-100
+    type: discrete
+    architecture: Pascal GP104
+    role: compute
+    dedicated_ai: true
+    display_connected: false
+    description: Dedicated headless AI compute node for Ollama multi-GPU LLM offload.
+  - id: 2
+    model: P104-100
     vram_gb: 8
-  - model: P104-100
+    type: discrete
+    architecture: Pascal GP104-100
+    role: compute
+    dedicated_ai: true
+    display_connected: false
+    description: Dedicated headless AI compute node for Ollama multi-GPU LLM offload.
+  - id: 3
+    model: P104-100
     vram_gb: 8
-  - model: P106-100
+    type: discrete
+    architecture: Pascal GP104-100
+    role: compute
+    dedicated_ai: true
+    display_connected: false
+    description: Dedicated headless AI compute node for Ollama multi-GPU LLM offload.
+  - id: 4
+    model: P106-100
     vram_gb: 6
-  - model: Intel HD Graphics 530
-    integrated: true
+    type: discrete
+    architecture: Pascal GP106-100
+    role: compute
+    dedicated_ai: true
+    display_connected: false
+    description: Dedicated headless AI compute node for Ollama multi-GPU LLM offload.
