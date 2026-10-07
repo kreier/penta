@@ -1,0 +1,161 @@
+{
+  "filename": "2026-10-01_penta_benchmarks.xlsx",
+  "parsedAt": "2026-10-07T05:06:52.221Z",
+  "fileSize": 21107,
+  "sheets": {
+    "Inference Benchmarks": {
+      "rowCount": 5,
+      "headers": [
+        "model",
+        "parameters_b",
+        "quant",
+        "context_size",
+        "prompt_tokens",
+        "eval_tokens",
+        "prompt_eval_tok_per_sec",
+        "eval_tok_per_sec",
+        "ttft_ms",
+        "total_duration_sec",
+        "layers_offloaded",
+        "gpus_used",
+        "vram_used_mb",
+        "status"
+      ],
+      "rows": [
+        {
+          "model": "llama3:8b-instruct-q4_K_M",
+          "parameters_b": 8.03,
+          "quant": "Q4_K_M",
+          "context_size": 4096,
+          "prompt_tokens": 512,
+          "eval_tokens": 256,
+          "prompt_eval_tok_per_sec": 142.8,
+          "eval_tok_per_sec": 38.6,
+          "ttft_ms": 358,
+          "total_duration_sec": 7.22,
+          "layers_offloaded": "33/33 (100%)",
+          "gpus_used": "GTX 1070 + P104-100 #1",
+          "vram_used_mb": 5920,
+          "status": "PASSED"
+        },
+        {
+          "model": "mistral:7b-instruct-v0.3-q4_0",
+          "parameters_b": 7.24,
+          "quant": "Q4_0",
+          "context_size": 4096,
+          "prompt_tokens": 512,
+          "eval_tokens": 256,
+          "prompt_eval_tok_per_sec": 156.4,
+          "eval_tok_per_sec": 42.1,
+          "ttft_ms": 327,
+          "total_duration_sec": 6.74,
+          "layers_offloaded": "33/33 (100%)",
+          "gpus_used": "GTX 1070 + P104-100 #1",
+          "vram_used_mb": 5180,
+          "status": "PASSED"
+        },
+        {
+          "model": "qwen2.5:14b-instruct-q4_K_M",
+          "parameters_b": 14.7,
+          "quant": "Q4_K_M",
+          "context_size": 4096,
+          "prompt_tokens": 512,
+          "eval_tokens": 256,
+          "prompt_eval_tok_per_sec": 84.2,
+          "eval_tok_per_sec": 21.7,
+          "ttft_ms": 608,
+          "total_duration_sec": 12.89,
+          "layers_offloaded": "49/49 (100%)",
+          "gpus_used": "GTX 1070 + 2x P104-100",
+          "vram_used_mb": 10450,
+          "status": "PASSED"
+        },
+        {
+          "model": "deepseek-coder-v2:16b-lite-instruct-q4_K_M",
+          "parameters_b": 15.7,
+          "quant": "Q4_K_M",
+          "context_size": 8192,
+          "prompt_tokens": 1024,
+          "eval_tokens": 512,
+          "prompt_eval_tok_per_sec": 71.5,
+          "eval_tok_per_sec": 19.4,
+          "ttft_ms": 1432,
+          "total_duration_sec": 28.12,
+          "layers_offloaded": "28/28 (100%)",
+          "gpus_used": "GTX 1070 + 2x P104-100 + P106-100",
+          "vram_used_mb": 13200,
+          "status": "PASSED"
+        },
+        {
+          "model": "llama3:70b-instruct-q4_0",
+          "parameters_b": 70.6,
+          "quant": "Q4_0",
+          "context_size": 2048,
+          "prompt_tokens": 256,
+          "eval_tokens": 128,
+          "prompt_eval_tok_per_sec": 18.2,
+          "eval_tok_per_sec": 4.8,
+          "ttft_ms": 14065,
+          "total_duration_sec": 38.45,
+          "layers_offloaded": "52/81 (64% partial)",
+          "gpus_used": "All 4 Discrete GPUs + System RAM fallback",
+          "vram_used_mb": 29800,
+          "status": "WARNING_VRAM_SPILL"
+        }
+      ]
+    },
+    "Layer Offloading Map": {
+      "rowCount": 5,
+      "headers": [
+        "layer_range",
+        "gpu_id",
+        "gpu_name",
+        "allocated_vram_mb",
+        "pci_bus",
+        "bus_type"
+      ],
+      "rows": [
+        {
+          "layer_range": "Embedding + Layers 0-14",
+          "gpu_id": 1,
+          "gpu_name": "GTX 1070 8GB",
+          "allocated_vram_mb": 7200,
+          "pci_bus": "01:00.0",
+          "bus_type": "PCIe 3.0 x16"
+        },
+        {
+          "layer_range": "Layers 15-28",
+          "gpu_id": 2,
+          "gpu_name": "P104-100 8GB #1",
+          "allocated_vram_mb": 7650,
+          "pci_bus": "02:00.0",
+          "bus_type": "PCIe 3.0 x4 (riser)"
+        },
+        {
+          "layer_range": "Layers 29-42",
+          "gpu_id": 3,
+          "gpu_name": "P104-100 8GB #2",
+          "allocated_vram_mb": 7600,
+          "pci_bus": "03:00.0",
+          "bus_type": "PCIe 3.0 x1 (riser)"
+        },
+        {
+          "layer_range": "Layers 43-51",
+          "gpu_id": 4,
+          "gpu_name": "P106-100 6GB",
+          "allocated_vram_mb": 5850,
+          "pci_bus": "04:00.0",
+          "bus_type": "PCIe 3.0 x1 (riser)"
+        },
+        {
+          "layer_range": "Layers 52-80 + Output Head",
+          "gpu_id": 0,
+          "gpu_name": "Host RAM / CPU + Intel HD 530 iGPU",
+          "allocated_vram_mb": 18200,
+          "pci_bus": "00:02.0",
+          "bus_type": "Direct DMI 3.0"
+        }
+      ]
+    }
+  }
+}
