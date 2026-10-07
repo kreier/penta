@@ -1,16 +1,125 @@
 {
+  "updatedAt": "2026-10-07T05:00:07.009Z",
+  "totalFiles": 3,
   "files": [
     {
       "name": "2026-10-01_penta_benchmarks.xlsx",
-      "path": "/data/benchmarks/2026-10-01_penta_benchmarks.xlsx",
+      "path": "data/benchmarks/2026-10-01_penta_benchmarks.xlsx",
+      "recordPath": "data/records/2026-10-01_penta_benchmarks.json",
       "description": "Initial throughput / latency measurements with ollama docker images.",
-      "tags": ["ollama","throughput","latency","inference","penta"]
+      "tags": [
+        "ollama",
+        "throughput",
+        "latency",
+        "inference",
+        "penta",
+        "benchmark",
+        "offloading",
+        "llama",
+        "gtx1070",
+        "p104",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "p106"
+      ],
+      "sheetNames": [
+        "Inference Benchmarks",
+        "Layer Offloading Map"
+      ],
+      "sheets": [
+        {
+          "name": "Inference Benchmarks",
+          "rowCount": 5,
+          "columnCount": 14
+        },
+        {
+          "name": "Layer Offloading Map",
+          "rowCount": 5,
+          "columnCount": 6
+        }
+      ],
+      "totalRows": 10,
+      "fileSize": 21107,
+      "lastModified": "2026-10-07T05:00:06.656Z"
+    },
+    {
+      "name": "2026-10-05_penta_benchmarks.xlsx",
+      "path": "data/benchmarks/2026-10-05_penta_benchmarks.xlsx",
+      "recordPath": "data/records/2026-10-05_penta_benchmarks.json",
+      "description": "Benchmark workbook containing Inference Benchmarks, Layer Offloading Map.",
+      "tags": [
+        "penta",
+        "benchmark",
+        "inference",
+        "ollama",
+        "offloading",
+        "llama",
+        "gtx1070",
+        "p104",
+        "mistral",
+        "qwen",
+        "deepseek",
+        "p106"
+      ],
+      "sheetNames": [
+        "Inference Benchmarks",
+        "Layer Offloading Map"
+      ],
+      "sheets": [
+        {
+          "name": "Inference Benchmarks",
+          "rowCount": 5,
+          "columnCount": 14
+        },
+        {
+          "name": "Layer Offloading Map",
+          "rowCount": 5,
+          "columnCount": 6
+        }
+      ],
+      "totalRows": 10,
+      "fileSize": 21116,
+      "lastModified": "2026-10-07T05:00:06.660Z"
     },
     {
       "name": "gpu_memory_summary.xlsx",
-      "path": "/data/benchmarks/gpu_memory_summary.xlsx",
+      "path": "data/benchmarks/gpu_memory_summary.xlsx",
+      "recordPath": "data/records/gpu_memory_summary.json",
       "description": "Per-GPU VRAM and utilization snapshots.",
-      "tags": ["gpu","memory","penta"]
+      "tags": [
+        "gpu",
+        "memory",
+        "penta",
+        "vram",
+        "hardware",
+        "allocation",
+        "gtx1070",
+        "p104",
+        "p106",
+        "llama",
+        "qwen",
+        "deepseek"
+      ],
+      "sheetNames": [
+        "GPU Hardware Inventory",
+        "VRAM Allocation Profiles"
+      ],
+      "sheets": [
+        {
+          "name": "GPU Hardware Inventory",
+          "rowCount": 5,
+          "columnCount": 9
+        },
+        {
+          "name": "VRAM Allocation Profiles",
+          "rowCount": 5,
+          "columnCount": 7
+        }
+      ],
+      "totalRows": 10,
+      "fileSize": 20314,
+      "lastModified": "2026-10-07T05:00:06.659Z"
     }
   ]
 }

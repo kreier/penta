@@ -1,15 +1,23 @@
 # AGENTS
 
-This project will use lightweight agents (scripts or small services backed by AI) to help:
+This project uses lightweight agents (scripts and automation services backed by AI / rule engines) to manage the Penta 5-GPU inference documentation database.
 
-- Ingest spreadsheets into a searchable documentation database
-- Extract key metrics and generate summaries
-- Propose experiments based on past results
-- Automate maintenance tasks (e.g. validate data formats)
+## Active Agents & Tools
 
-Initial agent ideas
+### 1. `excel-ingest` (`scripts/ingest.js`)
+- **Status:** Implemented (`npm run ingest`)
+- **Role:** Scans `public/data/benchmarks/*.xlsx`, extracts workbook sheets, auto-detects tags and column headers, outputs structured JSON records into `public/data/records/`, and updates `public/data/files.json`.
+- **Permissions:** Read/write inside `public/data/`.
+- **CI/CD Integration:** Triggered automatically before build in GitHub Actions workflows (`.github/workflows/ci.yml` and `deploy.yml`).
 
-- excel-ingest: convert spreadsheet rows to structured JSON and store in docs/
-- bench-analyzer: summarize run-to-run variance and highlight regressions
+### 2. `bench-analyzer` (`scripts/bench_analyzer.js`)
+- **Status:** Implemented (`npm run analyze`)
+- **Role:** Compares successive benchmark runs across models (e.g., Llama 3, Mistral, Qwen 2.5), computes throughput/latency deltas, detects performance regressions or improvements, and writes automated variance reports to `docs/reports/latest_variance_report.md`.
+- **Permissions:** Read `public/data/records/`, write to `docs/reports/`.
 
-Add more agents as features mature. Track agent design and permissions here.
+---
+
+## Planned Future Agents
+
+- **`experiment-recommender`:** Analyzes GPU VRAM splits across the 5 cards (GTX 1070 + 2× P104-100 + P106-100 + iGPU) and recommends optimal Ollama `--num-gpu` and layer split boundaries.
+- **`nl-query-agent`:** Natural language search agent allowing queries like *"Which model achieves over 30 tokens/sec without spilling to CPU RAM?"*
