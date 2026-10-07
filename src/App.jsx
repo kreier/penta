@@ -140,7 +140,7 @@ export default function App() {
     <div className="app">
       <header className="site-header">
         <div className="brand-group">
-          <h1>penta <span className="badge-beta">v0.2</span></h1>
+          <h1>penta <span className="badge-beta">v0.2.1</span></h1>
           <p className="subtitle">5-GPU Server Benchmark & Ingested Documentation Explorer</p>
         </div>
         <div className="hardware-pill">
