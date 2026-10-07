@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "name": "2026-10-01_penta_benchmarks.xlsx",
+      "path": "/data/benchmarks/2026-10-01_penta_benchmarks.xlsx",
+      "description": "Initial throughput / latency measurements with ollama docker images.",
+      "tags": ["ollama","throughput","latency","inference","penta"]
+    },
+    {
+      "name": "gpu_memory_summary.xlsx",
+      "path": "/data/benchmarks/gpu_memory_summary.xlsx",
+      "description": "Per-GPU VRAM and utilization snapshots.",
+      "tags": ["gpu","memory","penta"]
+    }
+  ]
+}
