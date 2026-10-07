@@ -1,0 +1,16 @@
+name: penta
+purpose: AI inference
+cpu: Intel Core i3-6100
+gpu_count: 5
+discrete_vram_gb: 30
+gpus:
+  - model: GTX 1070
+    vram_gb: 8
+  - model: P104-100
+    vram_gb: 8
+  - model: P104-100
+    vram_gb: 8
+  - model: P106-100
+    vram_gb: 6
+  - model: Intel HD Graphics 530
+    integrated: true
